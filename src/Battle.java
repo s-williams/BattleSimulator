@@ -14,7 +14,7 @@ public class Battle {
 
 
     public void fight() {
-        
+
     }
 
 }

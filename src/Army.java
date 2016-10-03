@@ -15,6 +15,7 @@ public class Army {
         this.infantry = infantry;
         this.cavalry = cavalry;
         this.artillery = artillery;
+
         this.infantryModifier = infantryModifier;
         this.cavalryModifer = cavalryModifer;
         this.artilleryModifier = artilleryModifier;
@@ -30,6 +31,10 @@ public class Army {
 
     public int getArtillery() {
         return artillery;
+    }
+
+    public int getMaxStrengthSize() {
+        return (infantry + cavalry + artillery) * Config.REGIMENT_SIZE;
     }
 
     public double getInfantryModifier() {
