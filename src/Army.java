@@ -1,11 +1,16 @@
+import java.util.ArrayList;
+
 /**
- * Created by Admin on 2016/10/04.
+ * Models the army, controls its regiments
  */
 public class Army {
 
     private int infantry;
     private int cavalry;
     private int artillery;
+
+    private ArrayList<Regiment> armyRegiments;
+
     private double infantryModifier;
     private double cavalryModifer;
     private double artilleryModifier;
@@ -19,18 +24,48 @@ public class Army {
         this.infantryModifier = infantryModifier;
         this.cavalryModifer = cavalryModifer;
         this.artilleryModifier = artilleryModifier;
+
+        //Fills the array with Regiments
+        armyRegiments = new ArrayList<Regiment>();
+        for (int i = 0; i < infantry; i++) {
+            armyRegiments.add(new Regiment(RegimentType.INFANTRY));
+        }
+        for (int i = infantry; i < infantry + cavalry; i++) {
+            armyRegiments.add(new Regiment(RegimentType.CAVALRY));
+        }
+        for (int i = infantry + cavalry; i < infantry + cavalry + artillery; i++) {
+            armyRegiments.add(new Regiment(RegimentType.ARTILLERY));
+        }
     }
 
-    public int getInfantry() {
-        return infantry;
+    public ArrayList<Regiment> getInfantry() {
+
+        ArrayList<Regiment> regiments = new ArrayList<Regiment>();
+        for (Regiment regiment : armyRegiments) {
+            if (regiment.getRegimentType() == RegimentType.INFANTRY) regiments.add(regiment);
+        }
+
+        return regiments;
     }
 
-    public int getCavalry() {
-        return cavalry;
+    public ArrayList<Regiment> getCavalry() {
+
+        ArrayList<Regiment> regiments = new ArrayList<Regiment>();
+        for (Regiment regiment : armyRegiments) {
+            if (regiment.getRegimentType() == RegimentType.CAVALRY) regiments.add(regiment);
+        }
+
+        return regiments;
     }
 
-    public int getArtillery() {
-        return artillery;
+    public ArrayList<Regiment> getArtillery() {
+
+        ArrayList<Regiment> regiments = new ArrayList<Regiment>();
+        for (Regiment regiment : armyRegiments) {
+            if (regiment.getRegimentType() == RegimentType.ARTILLERY) regiments.add(regiment);
+        }
+
+        return regiments;
     }
 
     public int getMaxStrengthSize() {

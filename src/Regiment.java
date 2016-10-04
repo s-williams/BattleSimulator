@@ -1,5 +1,5 @@
 /**
- * Created by Admin on 2016/10/04.
+ * Models the individual regiments
  */
 public class Regiment {
 
@@ -9,5 +9,18 @@ public class Regiment {
     public Regiment(RegimentType regimentType) {
         this.regimentType = regimentType;
         this.regimentManpower = Config.REGIMENT_SIZE;
+    }
+
+    public void damage(int damageDealt) {
+        regimentManpower = regimentManpower - damageDealt;
+        if (regimentManpower < 0) regimentManpower = 0;
+    }
+
+    public RegimentType getRegimentType() {
+        return regimentType;
+    }
+
+    public int getRegimentManpower() {
+        return regimentManpower;
     }
 }
