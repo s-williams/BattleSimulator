@@ -15,6 +15,8 @@ public class Army {
     private double cavalryModifer;
     private double artilleryModifier;
 
+    private int morale;
+
     public Army(int infantry, int cavalry, int artillery, double infantryModifier, double cavalryModifer, double artilleryModifier) {
 
         this.infantry = infantry;
@@ -36,6 +38,8 @@ public class Army {
         for (int i = infantry + cavalry; i < infantry + cavalry + artillery; i++) {
             armyRegiments.add(new Regiment(RegimentType.ARTILLERY));
         }
+
+        morale = Config.MORALE;
     }
 
     public ArrayList<Regiment> getInfantry() {
@@ -72,6 +76,14 @@ public class Army {
         return (infantry + cavalry + artillery) * Config.REGIMENT_SIZE;
     }
 
+    public int getCurrentStrength() {
+        int strength = 0;
+        for (Regiment regiment : armyRegiments) {
+            strength = strength + regiment.getRegimentManpower();
+        }
+        return strength;
+    }
+
     public double getInfantryModifier() {
         return infantryModifier;
     }
@@ -82,5 +94,14 @@ public class Army {
 
     public double getArtilleryModifier() {
         return artilleryModifier;
+    }
+
+    public void damageMorale(int damage) {
+        morale = morale - damage;
+        if (morale < 0) morale = 0;
+    }
+
+    public int getMorale() {
+        return morale;
     }
 }

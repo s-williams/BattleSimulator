@@ -35,10 +35,13 @@ public class Main {
         System.out.println("Artillery");
         double defendersArtilleryModifier = scanner.nextDouble();
 
+        System.out.println("Give the terrain modifier");
+        double terrainModifier = scanner.nextDouble();
+
         Army attackers = new Army(attackersInfantryNumber, attackersCavalryNumber, attackersArtilleryNumber, attackersInfantryModifier, attackersCavalryModifier, attackersArtilleryModifier);
         Army defenders = new Army(defendersInfantryNumber, defendersCavalryNumber, defendersArtilleryNumber, defendersInfantryModifier, defendersCavalryModifier, defendersArtilleryModifier);
 
-        Battle battle = new Battle(attackers, defenders);
+        Battle battle = new Battle(attackers, defenders, terrainModifier);
         battle.fight();
 
     }
