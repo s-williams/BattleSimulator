@@ -25,6 +25,6 @@ public class Regiment {
     }
 
     public String regimentStats() {
-        return regimentType + " Regiment" + regimentManpower +  " manpower";
+        return regimentType + " Reg, " + regimentManpower +  " mp";
     }
 }

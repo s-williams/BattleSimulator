@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79c2bc2d-cb3e-4bd9-89dc-da7556bbb55c" name="Default" comment="Planned front lines arrays">
+    <list default="true" id="79c2bc2d-cb3e-4bd9-89dc-da7556bbb55c" name="Default" comment="Finished print">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BattleSimulator/Army.class" afterPath="$PROJECT_DIR$/out/production/BattleSimulator/Army.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BattleSimulator/Battle.class" afterPath="$PROJECT_DIR$/out/production/BattleSimulator/Battle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BattleSimulator/Main.class" afterPath="$PROJECT_DIR$/out/production/BattleSimulator/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Battle.java" afterPath="$PROJECT_DIR$/src/Battle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Config.java" afterPath="$PROJECT_DIR$/src/Config.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Regiment.java" afterPath="$PROJECT_DIR$/src/Regiment.java" />
     </list>
     <ignored path="BattleSimulator.iws" />
@@ -31,7 +33,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
+            <state relative-caret-position="461">
               <caret line="43" column="72" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="72" />
               <folding />
             </state>
@@ -52,27 +54,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Regiment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Regiment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Regiment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="27" column="76" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Battle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Battle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Battle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="359">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#432#442#0" expanded="true" />
-                <element signature="e#512#522#0" expanded="true" />
-                <element signature="e#591#601#0" expanded="true" />
-                <element signature="e#671#681#0" expanded="true" />
+                <element signature="e#399#409#0" expanded="true" />
+                <element signature="e#479#489#0" expanded="true" />
+                <element signature="e#558#568#0" expanded="true" />
+                <element signature="e#638#648#0" expanded="true" />
+                <element signature="e#3778#3799#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,8 +114,8 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Army.java" />
         <option value="$PROJECT_DIR$/src/Config.java" />
-        <option value="$PROJECT_DIR$/src/Regiment.java" />
         <option value="$PROJECT_DIR$/src/Battle.java" />
+        <option value="$PROJECT_DIR$/src/Regiment.java" />
       </list>
     </option>
   </component>
@@ -617,7 +619,7 @@
       <option name="presentableId" value="Default" />
       <updated>1475535851235</updated>
       <workItem from="1475535865070" duration="5053000" />
-      <workItem from="1475600778642" duration="2955000" />
+      <workItem from="1475600778642" duration="6470000" />
     </task>
     <task id="LOCAL-00001" summary="Regiments">
       <created>1475538539274</created>
@@ -647,11 +649,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475540892223</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="printBattleStats(). Made battlefield arraylists.">
+      <created>1475603776569</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1475603776569</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8008000" />
+    <option name="totallyTimeSpent" value="11523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1036" extended-state="6" />
@@ -699,7 +708,8 @@
     <MESSAGE value="Regiments" />
     <MESSAGE value="Fixed army to use regiments appropiately" />
     <MESSAGE value="Planned front lines arrays" />
-    <option name="LAST_COMMIT_MESSAGE" value="Planned front lines arrays" />
+    <MESSAGE value="printBattleStats(). Made battlefield arraylists." />
+    <option name="LAST_COMMIT_MESSAGE" value="printBattleStats(). Made battlefield arraylists." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -743,11 +753,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#432#442#0" expanded="true" />
-            <element signature="e#512#522#0" expanded="true" />
-            <element signature="e#591#601#0" expanded="true" />
-            <element signature="e#671#681#0" expanded="true" />
+            <element signature="e#399#409#0" expanded="true" />
+            <element signature="e#479#489#0" expanded="true" />
+            <element signature="e#558#568#0" expanded="true" />
+            <element signature="e#638#648#0" expanded="true" />
+            <element signature="e#3778#3799#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,14 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="72" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Army.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2">
@@ -802,10 +804,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Regiment.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="76" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
+        <state relative-caret-position="461">
+          <caret line="43" column="72" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="72" />
           <folding />
         </state>
       </provider>
@@ -813,14 +815,22 @@
     <entry file="file://$PROJECT_DIR$/src/Battle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#432#442#0" expanded="true" />
-            <element signature="e#512#522#0" expanded="true" />
-            <element signature="e#591#601#0" expanded="true" />
-            <element signature="e#671#681#0" expanded="true" />
+            <element signature="e#399#409#0" expanded="true" />
+            <element signature="e#479#489#0" expanded="true" />
+            <element signature="e#558#568#0" expanded="true" />
+            <element signature="e#638#648#0" expanded="true" />
+            <element signature="e#3778#3799#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Regiment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

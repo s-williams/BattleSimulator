@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Models the battle between two armies
@@ -86,15 +85,43 @@ public class Battle {
         System.out.println("Defenders: " + defenders.getMorale() + " morale, " + defenders.getCurrentStrength() + " size");
 
         //Collections.max
-        int battleSize = Integer.max(Integer.max(attackerFrontLine.size(), attackerSecondLine.size()), Integer.max(defenderFrontLine.size(), defenderSecondLine.size()));
-        System.out.println("Battle width: " + battleSize);
+        int battleWidth = Integer.max(Integer.max(attackerFrontLine.size(), attackerSecondLine.size()), Integer.max(defenderFrontLine.size(), defenderSecondLine.size()));
+        System.out.println("Battle width: " + battleWidth);
         System.out.println("------------------------------------------------------------------");
 
 
-        String output;
-
-        for (int i = 0; i < battleSize; i++) {
-
+        String output = "";
+        int currentIndex = battleWidth - 1;
+        ArrayList<ArrayList<Regiment>> battleLines = new ArrayList<ArrayList<Regiment>>();
+        battleLines.add(attackerSecondLine);
+        battleLines.add(attackerFrontLine);
+        battleLines.add(defenderFrontLine);
+        battleLines.add(defenderSecondLine);
+        for (ArrayList<Regiment> arrayList : battleLines) {
+            if (currentIndex % 2 == 1) {
+                currentIndex = currentIndex - 1;
+            }
+            while (currentIndex >= 0) {
+                try {
+                    output = output + arrayList.get(currentIndex).regimentStats() + " | ";
+                } catch (IndexOutOfBoundsException e) {
+                    output = output + " | ";
+                }
+                currentIndex = currentIndex - 2;
+            }
+            currentIndex = 1;
+            while ( currentIndex <= battleWidth) {
+                try {
+                    output = output + arrayList.get(currentIndex).regimentStats() + " | ";
+                } catch (IndexOutOfBoundsException e) {
+                    output = output + " | ";
+                }
+                currentIndex = currentIndex + 2;
+            }
+            output = output + "\n";
+            currentIndex = battleWidth - 1;
         }
+
+        System.out.println(output);
     }
 }
