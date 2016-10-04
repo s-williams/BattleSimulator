@@ -16,6 +16,7 @@ public class Battle {
     private ArrayList<Regiment> defenderFrontLine = new ArrayList<Regiment>();
     private ArrayList<Regiment> defenderSecondLine = new ArrayList<Regiment>();
     private int turnNo = 0;
+    private int battleWidth;
 
 
 
@@ -32,6 +33,7 @@ public class Battle {
 
         deploy();
 
+        battleWidth = Integer.max(Integer.max(attackerFrontLine.size(), attackerSecondLine.size()), Integer.max(defenderFrontLine.size(), defenderSecondLine.size()));
         printBattleStats();
 
         while (attackers.getMorale() > 0 && defenders.getMorale() > 0 && attackers.getCurrentStrength() > 0 && defenders.getCurrentStrength() > 0) {
@@ -42,15 +44,43 @@ public class Battle {
             diceroll = random.nextInt(6) + 1;
 
             //for each regiment on front line, attack regiment in front of them. artillery on second line support regiment in front. cavalry attack 3 regiments in front.
-            //Casualties inflicted = (15 + 5 * (diceroll + terrainModifier)) * modifier
+            for (Regiment regiment : attackerFrontLine) {
+
+                //Check if regiment is dead
+                if (regiment.getRegimentManpower() == 0) {
+                    attackerFrontLine.add(attackerFrontLine.indexOf(regiment), null);
+                } else {
+                    int casualtiesInflicted = (int) ((15 + 5 * (diceroll)) * regiment.getRegimentModifier());
+                    try {
+                        //If the front line is dead, get the second line
+                        if (defenderFrontLine.get(attackerFrontLine.indexOf(regiment)).equals(null)) {
+                            defenderSecondLine.get(attackerFrontLine.indexOf(regiment)).damage(casualtiesInflicted);
+                        } else defenderFrontLine.get(attackerFrontLine.indexOf(regiment)).damage(casualtiesInflicted);
+                    } catch (NullPointerException e) {
+                        //No attack
+                    }
+                }
+
+                //Check if regiment to inside is dead
+
+            }
 
             //Defenders counterattack
             diceroll = random.nextInt(6) + 1;
 
-            //for each regiment on front line, attack regiment in front of them. artillery on second line support regiment in front. cavalry attack 3 regiments in front.
-            //Casualties inflicted = (15 + 5 * (diceroll + terrainModifier)) * modifier
+            for (Regiment regiment : defenderFrontLine) {
+                //Check if regiment is dead
+                if (regiment.getRegimentManpower() == 0) {
+                    attackerFrontLine.add(attackerFrontLine.indexOf(regiment), null);
+                }
+            }
 
-//            printBattleStats();
+            printBattleStats();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -85,7 +115,6 @@ public class Battle {
         System.out.println("Defenders: " + defenders.getMorale() + " morale, " + defenders.getCurrentStrength() + " size");
 
         //Collections.max
-        int battleWidth = Integer.max(Integer.max(attackerFrontLine.size(), attackerSecondLine.size()), Integer.max(defenderFrontLine.size(), defenderSecondLine.size()));
         System.out.println("Battle width: " + battleWidth);
         System.out.println("------------------------------------------------------------------");
 

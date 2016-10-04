@@ -5,10 +5,12 @@ public class Regiment {
 
     private RegimentType regimentType;
     private int regimentManpower;
+    private double regimentModifier;
 
-    public Regiment(RegimentType regimentType) {
+    public Regiment(RegimentType regimentType, double regimentModifier) {
         this.regimentType = regimentType;
         this.regimentManpower = Config.REGIMENT_SIZE;
+        this.regimentModifier = regimentModifier;
     }
 
     public void damage(int damageDealt) {
@@ -26,5 +28,9 @@ public class Regiment {
 
     public String regimentStats() {
         return regimentType + " Reg, " + regimentManpower +  " mp";
+    }
+
+    public double getRegimentModifier() {
+        return regimentModifier;
     }
 }

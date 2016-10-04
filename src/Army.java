@@ -30,13 +30,13 @@ public class Army {
         //Fills the array with Regiments
         armyRegiments = new ArrayList<Regiment>();
         for (int i = 0; i < infantry; i++) {
-            armyRegiments.add(new Regiment(RegimentType.INFANTRY));
+            armyRegiments.add(new Regiment(RegimentType.INFANTRY, infantryModifier));
         }
         for (int i = infantry; i < infantry + cavalry; i++) {
-            armyRegiments.add(new Regiment(RegimentType.CAVALRY));
+            armyRegiments.add(new Regiment(RegimentType.CAVALRY, cavalryModifer));
         }
         for (int i = infantry + cavalry; i < infantry + cavalry + artillery; i++) {
-            armyRegiments.add(new Regiment(RegimentType.ARTILLERY));
+            armyRegiments.add(new Regiment(RegimentType.ARTILLERY, artilleryModifier));
         }
 
         morale = Config.MORALE;
@@ -82,18 +82,6 @@ public class Army {
             strength = strength + regiment.getRegimentManpower();
         }
         return strength;
-    }
-
-    public double getInfantryModifier() {
-        return infantryModifier;
-    }
-
-    public double getCavalryModifer() {
-        return cavalryModifer;
-    }
-
-    public double getArtilleryModifier() {
-        return artilleryModifier;
     }
 
     public void damageMorale(int damage) {
