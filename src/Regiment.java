@@ -23,4 +23,8 @@ public class Regiment {
     public int getRegimentManpower() {
         return regimentManpower;
     }
+
+    public String regimentStats() {
+        return regimentType + " Regiment" + regimentManpower +  " manpower";
+    }
 }
