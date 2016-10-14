@@ -11,6 +11,7 @@ public class Battle {
     private Army attackers;
     private Army defenders;
     private double terrainModifier;
+    //TODO replace these with arrays
     private ArrayList<Regiment> attackerFrontLine = new ArrayList<Regiment>();
     private ArrayList<Regiment> attackerSecondLine = new ArrayList<Regiment>();
     private ArrayList<Regiment> defenderFrontLine = new ArrayList<Regiment>();
